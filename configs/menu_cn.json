@@ -32,7 +32,7 @@
                         "resources": [
                             {
                                 "method": "POST",
-                                "path": "/api/v1/menus"
+                                "path": "/api/v1/admin/menus"
                             }
                         ]
                     },
@@ -45,7 +45,7 @@
                         "resources": [
                             {
                                 "method": "PUT",
-                                "path": "/api/v1/menus/{id}"
+                                "path": "/api/v1/admin/menus/{id}"
                             }
                         ]
                     },
@@ -58,7 +58,7 @@
                         "resources": [
                             {
                                 "method": "DELETE",
-                                "path": "/api/v1/menus/{id}"
+                                "path": "/api/v1/admin/menus/{id}"
                             }
                         ]
                     },
@@ -73,11 +73,11 @@
                 "resources": [
                     {
                         "method": "GET",
-                        "path": "/api/v1/menus"
+                        "path": "/api/v1/admin/menus"
                     },
                     {
                         "method": "GET",
-                        "path": "/api/v1/menus/{id}"
+                        "path": "/api/v1/admin/menus/{id}"
                     }
                 ]
             },
@@ -98,7 +98,7 @@
                         "resources": [
                             {
                                 "method": "POST",
-                                "path": "/api/v1/roles"
+                                "path": "/api/v1/admin/roles"
                             }
                         ]
                     },
@@ -111,7 +111,7 @@
                         "resources": [
                             {
                                 "method": "PUT",
-                                "path": "/api/v1/roles/{id}"
+                                "path": "/api/v1/admin/roles/{id}"
                             }
                         ]
                     },
@@ -124,7 +124,7 @@
                         "resources": [
                             {
                                 "method": "DELETE",
-                                "path": "/api/v1/roles/{id}"
+                                "path": "/api/v1/admin/roles/{id}"
                             }
                         ]
                     },
@@ -139,15 +139,15 @@
                 "resources": [
                     {
                         "method": "GET",
-                        "path": "/api/v1/menus"
+                        "path": "/api/v1/admin/menus"
                     },
                     {
                         "method": "GET",
-                        "path": "/api/v1/roles"
+                        "path": "/api/v1/admin/roles"
                     },
                     {
                         "method": "GET",
-                        "path": "/api/v1/roles/{id}"
+                        "path": "/api/v1/admin/roles/{id}"
                     }
                 ]
             },
@@ -168,7 +168,7 @@
                         "resources": [
                             {
                                 "method": "POST",
-                                "path": "/api/v1/users"
+                                "path": "/api/v1/admin/users"
                             }
                         ]
                     },
@@ -181,7 +181,7 @@
                         "resources": [
                             {
                                 "method": "PUT",
-                                "path": "/api/v1/users/{id}"
+                                "path": "/api/v1/admin/users/{id}"
                             }
                         ]
                     },
@@ -194,7 +194,7 @@
                         "resources": [
                             {
                                 "method": "DELETE",
-                                "path": "/api/v1/users/{id}"
+                                "path": "/api/v1/admin/users/{id}"
                             }
                         ]
                     },
@@ -209,15 +209,15 @@
                 "resources": [
                     {
                         "method": "GET",
-                        "path": "/api/v1/roles"
+                        "path": "/api/v1/admin/roles"
                     },
                     {
                         "method": "GET",
-                        "path": "/api/v1/users"
+                        "path": "/api/v1/admin/users"
                     },
                     {
                         "method": "GET",
-                        "path": "/api/v1/users/{id}"
+                        "path": "/api/v1/admin/users/{id}"
                     }
                 ]
             },
@@ -231,7 +231,7 @@
                 "resources": [
                     {
                         "method": "GET",
-                        "path": "/api/v1/loggers"
+                        "path": "/api/v1/admin/loggers"
                     }
                 ]
             }

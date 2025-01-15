@@ -142,7 +142,7 @@ func useHTTPMiddlewares(_ context.Context, e *gin.Engine, injector *wirex.Inject
 	e.Use(middleware.AuthWithConfig(middleware.AuthConfig{
 		AllowedPathPrefixes: allowedPrefixes,
 		SkippedPathPrefixes: config.C.Middleware.Auth.SkippedPathPrefixes,
-		ParseUserID:         injector.M.RBAC.LoginAPI.LoginBIZ.ParseUserID,
+		ParseUserID:         injector.M.AccountModules.LoginAPI.LoginUC.ParseUserID,
 		RootID:              config.C.General.Root.ID,
 	}))
 
@@ -177,7 +177,7 @@ func useHTTPMiddlewares(_ context.Context, e *gin.Engine, injector *wirex.Inject
 			return false
 		},
 		GetEnforcer: func(c *gin.Context) *casbin.Enforcer {
-			return injector.M.RBAC.Casbinx.GetEnforcer()
+			return injector.M.AccountModules.Casbinx.GetEnforcer()
 		},
 		GetSubjects: func(c *gin.Context) []string {
 			return util.FromUserCache(c.Request.Context()).RoleIDs

@@ -1,5 +1,5 @@
 {
-    "name": "ginadmin",
+    "name": "appservice",
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",

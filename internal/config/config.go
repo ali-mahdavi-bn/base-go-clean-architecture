@@ -25,7 +25,7 @@ type General struct {
 	DisablePrintConfig bool
 	DefaultLoginPwd    string `default:"6351623c8cef86fefabfa7da046fc619"` // MD5(abc-123)
 	WorkDir            string // From command arguments
-	MenuFile           string // From schema.Menus (JSON/YAML)
+	MenuFile           string // From entities.Menus (JSON/YAML)
 	DenyDeleteMenu     bool
 	HTTP               struct {
 		Addr            string `default:":8040"`
@@ -38,7 +38,7 @@ type General struct {
 	}
 	Root struct {
 		ID       string `default:"root"`
-		Username string `default:"admin"`
+		Username string `default:"account"`
 		Password string
 		Name     string `default:"Admin"`
 	}
@@ -98,8 +98,8 @@ type Util struct {
 	Prometheus struct {
 		Enable         bool
 		Port           int    `default:"9100"`
-		BasicUsername  string `default:"admin"`
-		BasicPassword  string `default:"admin"`
+		BasicUsername  string `default:"account"`
+		BasicPassword  string `default:"account"`
 		LogApis        []string
 		LogMethods     []string
 		DefaultCollect bool

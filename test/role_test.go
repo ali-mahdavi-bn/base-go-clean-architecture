@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/LyricTian/gin-admin/v10/internal/mods/rbac/schema"
+	"github.com/LyricTian/gin-admin/v10/internal/mods/account/entities"
 	"github.com/LyricTian/gin-admin/v10/pkg/util"
 	"github.com/stretchr/testify/assert"
 )
@@ -12,7 +12,7 @@ import (
 func TestRole(t *testing.T) {
 	e := tester(t)
 
-	menuFormItem := schema.MenuForm{
+	menuFormItem := entities.MenuForm{
 		Code:        "role",
 		Name:        "Role management",
 		Description: "Role management",
@@ -20,10 +20,10 @@ func TestRole(t *testing.T) {
 		Type:        "page",
 		Path:        "/system/role",
 		Properties:  `{"icon":"role"}`,
-		Status:      schema.MenuStatusEnabled,
+		Status:      entities.MenuStatusEnabled,
 	}
 
-	var menu schema.Menu
+	var menu entities.Menu
 	e.POST(baseAPI + "/menus").WithJSON(menuFormItem).
 		Expect().Status(http.StatusOK).JSON().Decode(&util.ResponseResult{Data: &menu})
 
@@ -38,18 +38,18 @@ func TestRole(t *testing.T) {
 	assert.Equal(menuFormItem.Properties, menu.Properties)
 	assert.Equal(menuFormItem.Status, menu.Status)
 
-	roleFormItem := schema.RoleForm{
-		Code: "admin",
+	roleFormItem := entities.RoleForm{
+		Code: "account",
 		Name: "Administrator",
-		Menus: schema.RoleMenus{
+		Menus: entities.RoleMenus{
 			{MenuID: menu.ID},
 		},
 		Description: "Administrator",
 		Sequence:    9,
-		Status:      schema.RoleStatusEnabled,
+		Status:      entities.RoleStatusEnabled,
 	}
 
-	var role schema.Role
+	var role entities.Role
 	e.POST(baseAPI + "/roles").WithJSON(roleFormItem).Expect().Status(http.StatusOK).JSON().Decode(&util.ResponseResult{Data: &role})
 	assert.NotEmpty(role.ID)
 	assert.Equal(roleFormItem.Code, role.Code)
@@ -59,17 +59,17 @@ func TestRole(t *testing.T) {
 	assert.Equal(roleFormItem.Status, role.Status)
 	assert.Equal(len(roleFormItem.Menus), len(role.Menus))
 
-	var roles schema.Roles
+	var roles entities.Roles
 	e.GET(baseAPI + "/roles").Expect().Status(http.StatusOK).JSON().Decode(&util.ResponseResult{Data: &roles})
 	assert.GreaterOrEqual(len(roles), 1)
 
 	newName := "Administrator 1"
-	newStatus := schema.RoleStatusDisabled
+	newStatus := entities.RoleStatusDisabled
 	role.Name = newName
 	role.Status = newStatus
 	e.PUT(baseAPI + "/roles/" + role.ID).WithJSON(role).Expect().Status(http.StatusOK)
 
-	var getRole schema.Role
+	var getRole entities.Role
 	e.GET(baseAPI + "/roles/" + role.ID).Expect().Status(http.StatusOK).JSON().Decode(&util.ResponseResult{Data: &getRole})
 	assert.Equal(newName, getRole.Name)
 	assert.Equal(newStatus, getRole.Status)

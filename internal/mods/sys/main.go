@@ -28,7 +28,8 @@ func (a *SYS) Init(ctx context.Context) error {
 }
 
 func (a *SYS) RegisterV1Routers(ctx context.Context, v1 *gin.RouterGroup) error {
-	logger := v1.Group("loggers")
+	admin := v1.Group("admin")
+	logger := admin.Group("loggers")
 	{
 		logger.GET("", a.LoggerAPI.Query)
 	}

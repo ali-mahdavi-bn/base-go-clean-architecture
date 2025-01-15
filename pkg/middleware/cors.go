@@ -35,7 +35,7 @@ type CORSConfig struct {
 	AllowBrowserExtensions bool
 	// Allows usage of WebSocket protocol
 	AllowWebSockets bool
-	// Allows usage of file:// schema (dangerous!) use it only when you 100% sure it's needed
+	// Allows usage of file:// entities (dangerous!) use it only when you 100% sure it's needed
 	AllowFiles bool
 }
 

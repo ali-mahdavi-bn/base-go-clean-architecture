@@ -47,7 +47,7 @@
 > 可通过 `gin-admin-cli help new` 查看命令的详细说明
 
 ```bash
-gin-admin-cli new -d ~/go/src --name testapp --desc 'A test API service based on golang.' --pkg 'github.com/xxx/testapp' --git-url https://gitee.com/lyric/gin-admin.git
+gin-account-cli new -d ~/go/src --name testapp --desc 'A test API service based on golang.' --pkg 'github.com/xxx/testapp' --git-url https://gitee.com/lyric/gin-admin.git
 ```
 
 ### 启动服务
@@ -81,7 +81,7 @@ sudo docker build -f ./Dockerfile -t testapp:v1.0.0 .
 > 支持通过配置文件生成代码，更加详细的使用说明请参考 [gin-admin-cli](https://github.com/gin-admin/gin-admin-cli)
 
 ```bash
-gin-admin-cli gen -d . -m CMS --structs Article --structs-comment 'Article management'
+gin-account-cli gen -d . -m CMS --structs Article --structs-comment 'Article management'
 ```
 
 ### Remove a module
@@ -89,7 +89,7 @@ gin-admin-cli gen -d . -m CMS --structs Article --structs-comment 'Article manag
 > 可通过 `gin-admin-cli help remove` 查看命令的详细说明
 
 ```bash
-gin-admin-cli rm -d . -m CMS --structs Article
+gin-account-cli rm -d . -m CMS --structs Article
 ```
 
 ### 生成 Swagger 文档

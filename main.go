@@ -10,9 +10,9 @@ import (
 // Usage: go build -ldflags "-X main.VERSION=x.x.x"
 var VERSION = "v10.0.2"
 
-// @title ginadmin
+// @title appservice
 // @version v10.0.2
-// @description A lightweight, flexible, elegant and full-featured RBAC scaffolding based on GIN + GORM 2.0 + Casbin 2.0 + Wire DI.
+// @description A lightweight, flexible, elegant and full-featured AccountModules scaffolding based on GIN + GORM 2.0 + Casbin 2.0 + Wire DI.
 // @securityDefinitions.apikey ApiKeyAuth
 // @in header
 // @name Authorization
@@ -20,9 +20,9 @@ var VERSION = "v10.0.2"
 // @basePath /
 func main() {
 	app := cli.NewApp()
-	app.Name = "ginadmin"
+	app.Name = "appservice"
 	app.Version = VERSION
-	app.Usage = "A lightweight, flexible, elegant and full-featured RBAC scaffolding based on GIN + GORM 2.0 + Casbin 2.0 + Wire DI."
+	app.Usage = "A lightweight, flexible, elegant and full-featured AccountModules scaffolding based on GIN + GORM 2.0 + Casbin 2.0 + Wire DI."
 	app.Commands = []*cli.Command{
 		cmd.StartCmd(),
 		cmd.StopCmd(),

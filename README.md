@@ -45,7 +45,7 @@ English | [中文](README_CN.md)
 ### Create a new project
 
 ```bash
-gin-admin-cli new -d ~/go/src --name testapp --desc 'A test API service based on golang.' --pkg 'github.com/xxx/testapp'
+gin-account-cli new -d ~/go/src --name testapp --desc 'A test API service based on golang.' --pkg 'github.com/xxx/testapp'
 ```
 
 ### Start the service
@@ -62,13 +62,13 @@ go run main.go start
 > For more detailed usage instructions, please refer to [gin-admin-cli](https://github.com/gin-admin/gin-admin-cli)
 
 ```bash
-gin-admin-cli gen -d . -m CMS --structs Article --structs-comment 'Article management'
+gin-account-cli gen -d . -m CMS --structs Article --structs-comment 'Article management'
 ```
 
 ### Remove a module
 
 ```bash
-gin-admin-cli rm -d . -m CMS --structs Article
+gin-account-cli rm -d . -m CMS --structs Article
 ```
 
 ### Build the service

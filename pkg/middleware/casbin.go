@@ -19,6 +19,7 @@ type CasbinConfig struct {
 
 func CasbinWithConfig(config CasbinConfig) gin.HandlerFunc {
 	return func(c *gin.Context) {
+
 		if !AllowedPathPrefixes(c, config.AllowedPathPrefixes...) ||
 			SkippedPathPrefixes(c, config.SkippedPathPrefixes...) ||
 			(config.Skipper != nil && config.Skipper(c)) {

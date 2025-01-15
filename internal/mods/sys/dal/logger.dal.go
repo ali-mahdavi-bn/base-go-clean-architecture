@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	rbacSchema "github.com/LyricTian/gin-admin/v10/internal/mods/rbac/schema"
+	rbacSchema "github.com/LyricTian/gin-admin/v10/internal/mods/account/entities"
 	"github.com/LyricTian/gin-admin/v10/internal/mods/sys/schema"
 	"github.com/LyricTian/gin-admin/v10/pkg/errors"
 	"github.com/LyricTian/gin-admin/v10/pkg/util"
